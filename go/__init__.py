@@ -237,11 +237,11 @@ _go_types_common = {
     "int": "int32",
     "long": "int64",
     "longArray": "[]int64",
-    "SqlColumnMetadata": "sql.SqlColumnMetadata",
-    "SqlError": "sql.SqlError",
-    "SqlQueryId": "sql.SqlQueryId",
-    "SqlPage": "sql.SqlPage",
-    "List_SqlColumnMetadata": "[]sql.SqlColumnMetadata",
+    "SqlColumnMetadata": "sql.ColumnMetadata",
+    "SqlError": "sql.Error",
+    "SqlQueryId": "sql.QueryId",
+    "SqlPage": "sql.Page",
+    "List_SqlColumnMetadata": "[]sql.ColumnMetadata",
 }
 
 _go_types_encode = {
