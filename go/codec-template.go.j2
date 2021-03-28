@@ -218,8 +218,8 @@ func Handle{{ service_name|capital }}{{ method.name|capital }}(clientMessage *pr
             is{{ param.name|capital }}Exists := false
             {{ escape_keyword(param.name) }} := {% if param.type == 'boolean' %}false{% elif param.type == 'UUID' %}null{% else %}0{% endif %}
 
-            if initialFrame.content.length >= EVENT_{{ to_upper_snake_case(event.name)}}_{{ to_upper_snake_case(param.name) }}_OFFSET + BitsUtil.{{ param.type.upper() }}_SIZE_IN_BYTES {
-                {{ escape_keyword(param.name) }} = FixSizedTypesCodec.Decode{{ param.type|capital }}(initialFrame.content, EVENT_{{ to_upper_snake_case(event.name)}}_{{ to_upper_snake_case(param.name) }}_OFFSET)
+            if initialFrame.content.length >= {{ service_name|capital }}{{ method.name|capital }}Event{{ event.name|capital }}{{param.name|capital}}Offset + proto.{{ param.type|capital }}SizeInBytes {
+                {{ escape_keyword(param.name) }} = FixSizedTypesCodec.Decode{{ param.type|capital }}(initialFrame.content, {{ service_name|capital }}{{ method.name|capital }}Event{{ event.name|capital }}{{param.name|capital}}Offset)
                 is{{ param.name|capital }}Exists = true;
             }
         {% else %}

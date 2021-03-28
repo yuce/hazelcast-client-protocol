@@ -140,8 +140,8 @@ func Decode{{ codec.name|capital }}(frameIterator *proto.ForwardFrameIterator) {
     is{{ param.name|capital }}Exists := false
     {{ escape_keyword(param.name) }} := {% if param.type == 'boolean' %}false{% elif param.type == 'UUID' %}null{% else %}0{% endif %}
 
-    if initialFrame.content.length >= {{ to_upper_snake_case(param.name) }}_OFFSET + BitsUtil.{{ param.type.upper() }}_SIZE_IN_BYTES {
-        {{ escape_keyword(param.name) }} = FixSizedTypesCodec.Decode{{ param.type|capital }}(initialFrame.Content, {{ to_upper_snake_case(param.name) }}_OFFSET)
+    if len(initialFrame.Content) >= {{ codec.name|capital }}Codec{{ param.name|capital }}FieldOffset + proto.{{ param.type|capital }}SizeInBytes {
+        {{ escape_keyword(param.name) }} = FixSizedTypesCodec.Decode{{ param.type|capital }}(initialFrame.Content, {{ codec.name|capital }}Codec{{ param.name|capital }}FieldOffset)
         is{{ param.name|capital }}Exists = true
     }
     {% else %}
