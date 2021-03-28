@@ -129,13 +129,13 @@ class PathHolders:
     StackTraceElementCodec = InternalImportPathHolder("StackTraceElementCodec", None, is_custom_codec=True)
     StringCodec = InternalImportPathHolder("StringCodec", None, is_builtin_codec=True)
     UUID = InternalImportPathHolder("UUID", "")
-    SqlError = InternalImportPathHolder("SqlError", "sql/")
+    SqlError = InternalImportPathHolder("SqlError", "/sql")
     SqlErrorCodec = InternalImportPathHolder("SqlErrorCodec", None, is_custom_codec=True)
-    SqlQueryId = InternalImportPathHolder("SqlQueryId", "sql/")
+    SqlQueryId = InternalImportPathHolder("SqlQueryId", "/sql")
     SqlQueryIdCodec = InternalImportPathHolder("SqlQueryIdCodec", None, is_custom_codec=True)
-    SqlColumnMetadata = InternalImportPathHolder("SqlColumnMetadata", "sql/")
+    SqlColumnMetadata = InternalImportPathHolder("SqlColumnMetadata", "/sql")
     SqlColumnMetadataCodec = InternalImportPathHolder("SqlColumnMetadataCodec", None, is_custom_codec=True)
-    SqlPage = InternalImportPathHolder("SqlPage", "sql/")
+    SqlPage = InternalImportPathHolder("SqlPage", "/sql")
     SqlPageCodec = InternalImportPathHolder("SqlPageCodec", None, is_builtin_codec=True)
 
 
