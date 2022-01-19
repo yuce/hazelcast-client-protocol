@@ -251,6 +251,7 @@ _go_types_common = {
     "SqlQueryId": "isql.QueryID",
     "SqlPage": "isql.Page",
     "SqlColumnMetadata": "sql.ColumnMetadata",
+    "HazelcastJsonValue": "serialization.JSON"
 }
 
 _go_types_encode = {
